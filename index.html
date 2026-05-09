@@ -1,0 +1,220 @@
+---
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANALHI | SCRAPBOOK</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Inter:wght@400;600;800&family=Playfair+Display:ital,wght@1,900&family=VT323&family=Silkscreen&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Marquee like the 2000s -->
+    <div class="marquee-bar">
+        <marquee behavior="scroll" direction="left" scrollamount="4">
+            +.*+. welcome 2 my scrapbook +.*+. currently listening to: the smiths +.*+. status: vibing to 80s alt rock +.*+. mood: warm & cozy +.*+. loves: hamilton, greninja, queen +.*+.
+        </marquee>
+    </div>
+
+    <div class="collage-container">
+        
+        <!-- Pushpins -->
+        <div class="pushpin pin-1"></div>
+        <div class="pushpin pin-2"></div>
+        <div class="pushpin pin-3"></div>
+        <div class="pushpin pin-4"></div>
+
+        <!-- Grungy background text -->
+        <div class="bg-text text-1">THERE IS A LIGHT THAT NEVER GOES OUT</div>
+        <div class="bg-text text-2">DON'T STOP ME NOW, I'M HAVING SUCH A GOOD TIME</div>
+
+        <!-- Title: Ransom Note -->
+        <div class="header-container">
+            <h1 class="ransom-title title-yellow">
+                <span class="r1">A</span><span class="r2">N</span><span class="r3">A</span><span class="r4">L</span><span class="r5">H</span><span class="r6">I</span><span class="r1">'</span><span class="r2">S</span>
+            </h1>
+            <h2 class="ransom-title title-analhi">
+                <span class="r3">S</span><span class="r4">C</span><span class="r1">R</span><span class="r6">A</span><span class="r2">P</span><span class="r5">B</span><span class="r4">O</span><span class="r3">O</span><span class="r1">K</span>
+            </h2>
+        </div>
+
+        <!-- NEW: Author Profile Polaroid -->
+        <div class="author-profile">
+            <div class="tape tape-profile"></div>
+            <img src="assets/profile.png" alt="Analhi Profile" class="profile-pic">
+            <div class="profile-info">
+                <h3>ANALHI</h3>
+                <p class="handwritten-text">Psychology Student 🧠</p>
+                <p class="handwritten-text">80s Soul ✨</p>
+                <p class="handwritten-text">"There is a light that never goes out"</p>
+            </div>
+        </div>
+
+        <!-- NEW: Notebook Blog Feed -->
+        <div class="window blog-window">
+            <div class="window-header">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+                <div class="url-bar">c:/analhi/diary_entries.txt</div>
+            </div>
+            <div class="blog-feed">
+                <div class="notebook-page">
+                    {% for post in site.posts %}
+                    <div class="entry">
+                        <p class="entry-date handwritten-text">Date: {{ post.date | date: "%B %d, %Y" }}</p>
+                        <h2 class="entry-title">{{ post.title }}</h2>
+                        <div class="entry-text handwritten-text">
+                            {{ post.content }}
+                        </div>
+                    </div>
+                    {% else %}
+                    <div class="entry">
+                        <p class="entry-date handwritten-text">Date: Hoy</p>
+                        <h2 class="entry-title">Aún no hay entradas</h2>
+                        <div class="entry-text handwritten-text">
+                            Escribe tu primera entrada desde el panel de administrador.
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Fake Browser Window: Fanfic / Journal -->
+        <div class="window window-1">
+            <div class="window-header">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+                <div class="url-bar">c:/analhi/music_notes.txt</div>
+            </div>
+            <div class="window-content">
+                <h2>MUSIC NOTES</h2>
+                <div class="fic-entry">
+                    <h3>The Smiths - Alt Vibe</h3>
+                    <p class="tags">80s, Alternative Rock, Indie</p>
+                    <p class="summary handwritten-text">"To die by your side is such a heavenly way to die." There is nothing quite like the melancholy of 80s alt rock...</p>
+                </div>
+                <div class="fic-entry">
+                    <h3>Queen - The Legends</h3>
+                    <p class="tags">Classic Rock, Pop, 80s</p>
+                    <p class="summary handwritten-text">Freddie Mercury is unmatched. I can listen to 'Somebody to Love' on repeat forever.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fake Browser Window: Profile -->
+        <div class="window window-3">
+            <div class="window-header">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+                <div class="url-bar">myspace.com/analhi/interests</div>
+            </div>
+            <div class="window-content">
+                <h2>MORE ABOUT ME</h2>
+                <p class="summary handwritten-text" style="font-size: 1.2rem; margin-bottom: 15px;">~*~ an old soul in a modern world ~*~</p>
+                
+                <div class="fic-entry">
+                    <h3>x. my brain .x</h3>
+                    <ul class="obsession-list handwritten-text">
+                        <li>Fascinated by <strong>general culture</strong></li>
+                        <li>Love to <strong>listen to music</strong> and <strong>write</strong></li>
+                    </ul>
+                </div>
+
+                <div class="fic-entry">
+                    <h3>+*.top artists.*+</h3>
+                    <ol class="obsession-list handwritten-text">
+                        <li><strong>The Smiths</strong></li>
+                        <li><strong>Queen</strong></li>
+                        <li><strong>80s & 90s Pop/Rock</strong></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hamilton / Musical Section -->
+        <div class="sticker hamilton-sticker">
+            <img src="assets/hamilton_star.png" alt="Hamilton Star">
+            <div class="grunge-text">"History has its eyes on you"</div>
+        </div>
+
+        <!-- Random aesthetic images -->
+        <img src="assets/cassette.png" alt="Cassette" class="sticker cassette">
+        <img src="assets/queen.png" alt="Queen Polaroid" class="sticker queen">
+        
+        <!-- Pokemon XYZ -->
+        <img src="assets/greninja.png" alt="Greninja" class="sticker greninja">
+
+        <!-- Interests Theme Window -->
+        <div class="window window-2">
+            <div class="window-header">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+                <div class="url-bar">c:/analhi/obsessions.txt</div>
+            </div>
+            <div class="window-content">
+                <h2>MY OBSESSIONS</h2>
+                
+                <div class="fic-entry">
+                    <h3>x. movies & culture .x</h3>
+                    <ul class="obsession-list handwritten-text">
+                        <li><strong>Guardians of the Galaxy Vol. 3</strong></li>
+                        <li><strong>80s/90s Pop Culture</strong></li>
+                        <li><strong>Musical Theatre (Hamilton)</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Favorite Movies Stickers -->
+        <div class="sticker movie-polaroid gotg">
+            <div class="photo">GOTG VOL. 3</div>
+            Guardians of the Galaxy
+        </div>
+
+        <!-- Music Player Widget -->
+        <div class="music-player">
+            <img src="assets/cd.png" alt="Spinning CD" class="cd-spin">
+            <div class="player-info">
+                <p class="now-playing">NOW PLAYING</p>
+                <p class="song-title">There Is a Light That Never Goes Out</p>
+                <p class="artist">The Smiths</p>
+                <div class="controls">
+                    <button>⏮</button>
+                    <button class="play">▶</button>
+                    <button>⏭</button>
+                </div>
+                <div class="progress-bar"><div class="progress"></div></div>
+            </div>
+        </div>
+
+        <!-- 2000s Blog Badges / Blinkies -->
+        <div class="badges-section">
+            <div class="badge badge-1">+*+ 80s alt rock +*+</div>
+            <div class="badge badge-2">~psych student~</div>
+            <div class="badge badge-3">*.hamilton trash.*</div>
+            <div class="badge badge-4">+*+ team greninja +*+</div>
+            <div class="badge badge-5">~queen forever~</div>
+        </div>
+
+        <!-- Visitor Counter -->
+        <div class="visitor-counter">
+            <span class="counter-label">visitors:</span>
+            <span class="counter-num">004,828</span>
+        </div>
+
+        <!-- Tape strips -->
+        <div class="tape tape-1"></div>
+        <div class="tape tape-2"></div>
+        <div class="tape tape-3"></div>
+
+    </div>
+</body>
+</html>
