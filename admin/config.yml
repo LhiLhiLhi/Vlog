@@ -2,7 +2,7 @@ backend:
   name: github
   repo: LhiLhiLhi/Vlog
   branch: main # Si tu repositorio usa master, cambia esto a master
-  app_id: AQUI_PONDREMOS_TU_CLIENT_ID # Este es el código que generaremos en GitHub
+  app_id: Ov23liG8dYzgy1XbfAF5 # Este es el código que generaremos en GitHub
   auth_type: pkce
 
 media_folder: "assets" # Dónde se guardan las imágenes subidas
