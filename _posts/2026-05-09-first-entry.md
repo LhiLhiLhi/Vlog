@@ -1,7 +1,7 @@
 ---
-layout: post
-title: "First entry! 📼"
+title: First entry! 📼
 date: 2026-05-09 12:00:00
+layout: post
 ---
-Hola! Welcome to my scrapbook vlog. This is where I'll be writing about whatever comes to my mind. 
-Right now I'm setting this up, listening to Queen, and organizing my thoughts. Life is crazy but music makes it better.
+
+hola :), me llamo Lhi y aquí escribiré cualquier cosa que se me ocurra por que soy una desquehacerada. me gustan la musica y las peliculas.
