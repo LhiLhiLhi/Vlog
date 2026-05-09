@@ -1,0 +1,20 @@
+backend:
+  name: github
+  repo: LhiLhiLhi/Vlog
+  branch: main # Si tu repositorio usa master, cambia esto a master
+  app_id: AQUI_PONDREMOS_TU_CLIENT_ID # Este es el código que generaremos en GitHub
+  auth_type: pkce
+
+media_folder: "assets" # Dónde se guardan las imágenes subidas
+public_folder: "/assets" # Cómo se ven las rutas en la página
+
+collections:
+  - name: "diario"
+    label: "Entradas del Diario"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Título", name: "title", widget: "string"}
+      - {label: "Fecha", name: "date", widget: "datetime"}
+      - {label: "Cuerpo del Texto", name: "body", widget: "text"}
