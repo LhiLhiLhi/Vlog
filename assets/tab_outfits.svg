@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Hanger -->
+  <path d="M32 8 L32 16" stroke="#7a5c43" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="32" cy="7" r="3" fill="none" stroke="#7a5c43" stroke-width="2"/>
+  <path d="M12 30 L32 16 L52 30" fill="none" stroke="#7a5c43" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Dress/top shape -->
+  <path d="M14 30 L12 55 L52 55 L50 30 L42 30 L38 35 L26 35 L22 30 Z" fill="#e9edc9" stroke="#7a5c43" stroke-width="1.5" stroke-linejoin="round"/>
+  <!-- Belt -->
+  <rect x="16" y="40" width="32" height="4" rx="1" fill="#d4a373" stroke="#7a5c43" stroke-width="1"/>
+  <!-- Scissors -->
+  <g transform="translate(48,8) scale(0.6) rotate(30)">
+    <circle cx="-4" cy="8" r="4" fill="none" stroke="#a44a3f" stroke-width="2"/>
+    <circle cx="4" cy="8" r="4" fill="none" stroke="#a44a3f" stroke-width="2"/>
+    <line x1="-2" y1="5" x2="4" y2="-4" stroke="#a44a3f" stroke-width="2" stroke-linecap="round"/>
+    <line x1="2" y1="5" x2="-4" y2="-4" stroke="#a44a3f" stroke-width="2" stroke-linecap="round"/>
+  </g>
+</svg>

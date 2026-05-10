@@ -1,0 +1,256 @@
+---
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANALHI | SCRAPBOOK</title>
+    <meta name="description" content="El scrapbook personal de Analhi - diario, música, obsesiones y más">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Inter:wght@400;600;800&family=Playfair+Display:ital,wght@1,900&family=VT323&family=Silkscreen&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Marquee like the 2000s -->
+    <div class="marquee-bar">
+        <marquee behavior="scroll" direction="left" scrollamount="4">
+            +.*+. welcome 2 my scrapbook +.*+. currently listening to: the smiths +.*+. status: vibing to 80s alt rock +.*+. mood: warm &amp; cozy +.*+. loves: hamilton, greninja, queen +.*+.
+        </marquee>
+    </div>
+
+    <!-- Main Layout -->
+    <div class="main-layout">
+
+        <!-- ============ LEFT COLUMN ============ -->
+        <div class="col-left">
+
+            <!-- Title: Ransom Note -->
+            <div class="header-container">
+                <h1 class="ransom-title title-yellow">
+                    <span class="r1">A</span><span class="r2">N</span><span class="r3">A</span><span class="r4">L</span><span class="r5">H</span><span class="r6">I</span><span class="r1">'</span><span class="r2">S</span>
+                </h1>
+                <h2 class="ransom-title title-analhi">
+                    <span class="r3">S</span><span class="r4">C</span><span class="r1">R</span><span class="r6">A</span><span class="r2">P</span><span class="r5">B</span><span class="r4">O</span><span class="r3">O</span><span class="r1">K</span>
+                </h2>
+            </div>
+
+            <!-- Decorative tape on title -->
+            <div class="tape tape-header"></div>
+
+            <!-- Notebook Blog Feed (Journal) -->
+            <div class="window blog-window" id="journal">
+                <div class="window-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <div class="url-bar">c:/analhi/diary_entries.txt</div>
+                </div>
+                <div class="blog-feed">
+                    <div class="notebook-page">
+                        {% for post in site.posts %}
+                        <div class="entry">
+                            <p class="entry-date handwritten-text">Date: {{ post.date | date: "%B %d, %Y" }}</p>
+                            <h2 class="entry-title">{{ post.title }}</h2>
+                            <div class="entry-text handwritten-text">
+                                {{ post.content }}
+                            </div>
+                        </div>
+                        {% else %}
+                        <div class="entry">
+                            <p class="entry-date handwritten-text">Date: Hoy</p>
+                            <h2 class="entry-title">Aún no hay entradas</h2>
+                            <div class="entry-text handwritten-text">
+                                Escribe tu primera entrada desde el panel de administrador.
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Decorative: Pushpins on journal -->
+            <div class="pushpin pin-journal-tl"></div>
+            <div class="pushpin pin-journal-tr"></div>
+
+            <!-- Decorative stamp -->
+            <div class="stamp stamp-left">
+                <div class="inner">POST<br>1985</div>
+            </div>
+
+            <!-- Music Player Widget (directly under journal) -->
+            <div class="music-player" id="reproductor">
+                <img src="assets/cd.png" alt="Spinning CD" class="cd-spin">
+                <div class="player-info">
+                    <p class="now-playing">NOW PLAYING</p>
+                    <p class="song-title">There Is a Light That Never Goes Out</p>
+                    <p class="artist">The Smiths</p>
+                    <div class="controls">
+                        <button aria-label="Anterior">⏮</button>
+                        <button class="play" aria-label="Play">▶</button>
+                        <button aria-label="Siguiente">⏭</button>
+                    </div>
+                    <div class="progress-bar"><div class="progress"></div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ RIGHT COLUMN ============ -->
+        <div class="col-right">
+
+            <!-- Camera Frame (Sobre Mí mini) -->
+            <div class="camera-frame">
+                <div class="camera-lens">
+                    <img src="assets/profile.png" alt="Analhi Profile" class="profile-pic">
+                    <div class="camera-overlay">
+                        <span class="rec">🔴 REC</span>
+                        <span class="batt">🔋</span>
+                    </div>
+                </div>
+                <div class="camera-body">
+                    <div class="camera-button"></div>
+                    <div class="camera-flash"></div>
+                    <h3>ANALHI</h3>
+                    <p class="handwritten-text" style="font-size:1.1rem;margin:0;">Psychology Student 🧠</p>
+                    <p class="handwritten-text" style="font-size:1.1rem;margin:0;">80s Soul ✨</p>
+                </div>
+            </div>
+
+            <!-- Calendar Widget -->
+            <div class="window calendar-window" id="calendario">
+                <div class="window-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <div class="url-bar">c:/analhi/calendar.exe</div>
+                </div>
+                <div class="calendar-content">
+                    <div class="calendar-nav">
+                        <button id="cal-prev" aria-label="Mes anterior">◀</button>
+                        <h3 id="cal-month-year"></h3>
+                        <button id="cal-next" aria-label="Mes siguiente">▶</button>
+                    </div>
+                    <div class="calendar-grid">
+                        <div class="cal-day-header">Dom</div>
+                        <div class="cal-day-header">Lun</div>
+                        <div class="cal-day-header">Mar</div>
+                        <div class="cal-day-header">Mié</div>
+                        <div class="cal-day-header">Jue</div>
+                        <div class="cal-day-header">Vie</div>
+                        <div class="cal-day-header">Sáb</div>
+                    </div>
+                    <div class="calendar-days" id="cal-days"></div>
+                </div>
+            </div>
+
+            <!-- Shrine Receipt with SVG icons -->
+            <div class="shrine-receipt">
+                <h3>✦ DIRECTORY ✦</h3>
+                <p class="subtitle">ANALHI'S WORLD</p>
+                <div class="line"></div>
+                <a href="shrine_musica.html" class="receipt-link">
+                    <span class="receipt-num">01</span>
+                    <img src="assets/tab_musica.svg" alt="" class="receipt-icon">
+                    <span class="receipt-name">Música</span>
+                    <span class="receipt-arrow">→</span>
+                </a>
+                <a href="shrine_sobremi.html" class="receipt-link">
+                    <span class="receipt-num">02</span>
+                    <img src="assets/tab_sobremi.svg" alt="" class="receipt-icon">
+                    <span class="receipt-name">Sobre Mí</span>
+                    <span class="receipt-arrow">→</span>
+                </a>
+                <a href="shrine_outfits.html" class="receipt-link">
+                    <span class="receipt-num">03</span>
+                    <img src="assets/tab_outfits.svg" alt="" class="receipt-icon">
+                    <span class="receipt-name">Outfits</span>
+                    <span class="receipt-arrow">→</span>
+                </a>
+                <a href="shrine_obsesiones.html" class="receipt-link">
+                    <span class="receipt-num">04</span>
+                    <img src="assets/tab_obsesiones.svg" alt="" class="receipt-icon">
+                    <span class="receipt-name">Obsesiones</span>
+                    <span class="receipt-arrow">→</span>
+                </a>
+                <a href="shrine_fics.html" class="receipt-link">
+                    <span class="receipt-num">05</span>
+                    <img src="assets/tab_fics.svg" alt="" class="receipt-icon">
+                    <span class="receipt-name">Mis Fics</span>
+                    <span class="receipt-arrow">→</span>
+                </a>
+                <div class="line"></div>
+                <div class="barcode">||| || | ||| || || | | ||</div>
+                <p class="receipt-footer">THANK YOU FOR VISITING ♡</p>
+            </div>
+
+            <!-- Tamagotchi -->
+            <div class="tamagotchi">
+                <div class="tama-screen">
+                    <div class="tama-pet">ʕ•ᴥ•ʔ</div>
+                </div>
+                <div class="tama-buttons">
+                    <div class="tama-btn"></div>
+                    <div class="tama-btn"></div>
+                    <div class="tama-btn"></div>
+                </div>
+            </div>
+
+            <!-- Decorative stamp -->
+            <div class="stamp stamp-right">
+                <div class="inner">UK<br>MAIL</div>
+            </div>
+
+            <!-- 2000s Blog Badges / Blinkies -->
+            <div class="badges-section">
+                <div class="badge badge-1">+*+ 80s alt rock +*+</div>
+                <div class="badge badge-2">~psych student~</div>
+                <div class="badge badge-3">*.hamilton trash.*</div>
+                <div class="badge badge-4">+*+ team greninja +*+</div>
+                <div class="badge badge-5">~queen forever~</div>
+            </div>
+
+            <!-- Visitor Counter -->
+            <div class="visitor-counter">
+                <span class="counter-label">visitors:</span>
+                <span class="counter-num">004,828</span>
+            </div>
+        </div>
+
+    </div><!-- end main-layout -->
+
+    <!-- Decorative elements (floating) -->
+    <div class="decorations">
+        <div class="dried-flower flower-1">🥀</div>
+        <div class="dried-flower flower-2">🌿</div>
+        <div class="dried-flower flower-3">🌸</div>
+        <div class="tape tape-1"></div>
+        <div class="tape tape-2"></div>
+        <div class="tape tape-3"></div>
+        <div class="tape tape-4"></div>
+        <div class="tape tape-5"></div>
+        <div class="tape tape-6"></div>
+        <img src="assets/cassette.png" alt="Cassette" class="floating-sticker cassette-float">
+        <img src="assets/greninja.png" alt="Greninja" class="floating-sticker greninja-float">
+        <div class="doodle doodle-star-1">✦</div>
+        <div class="doodle doodle-star-2">✧</div>
+        <div class="doodle doodle-star-3">✦</div>
+        <div class="doodle doodle-heart">♡</div>
+        <div class="doodle doodle-swirl">~*~</div>
+    </div>
+
+    <script>
+        // Inyectamos la playlist desde Jekyll para que script.js la use
+        window.vlogPlaylist = [
+            {% for song in site.data.playlist.canciones %}
+            {
+                title: "{{ song.title }}",
+                artist: "{{ song.artist }}",
+                url: "{{ song.url | default: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3' }}"
+            }{% unless forloop.last %},{% endunless %}
+            {% endfor %}
+        ];
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+---
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✎ Mis Fics | ANALHI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="shrine.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Inter:wght@400;600;800&family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="index.html" class="back-btn">← volver al inicio</a>
+
+    <div class="shrine-container">
+        <h1 class="shrine-title">✎ Mis Fics ✎</h1>
+        <p class="shrine-subtitle handwritten-text">las historias que viven dentro de mi cabeza</p>
+
+        <div class="fics-list">
+            {% for fic in site.data.fics.fics %}
+            <div class="fic-card">
+                {% if fic.estado == "EN PROGRESO" %}
+                <div class="fic-status wip">EN PROGRESO</div>
+                {% elsif fic.estado == "COMPLETADO" %}
+                <div class="fic-status complete">COMPLETADO</div>
+                {% else %}
+                <div class="fic-status idea">IDEA 💡</div>
+                {% endif %}
+                <h2>{{ fic.titulo }}</h2>
+                <p class="fic-meta">
+                    <span>Fandom: {{ fic.fandom }}</span>
+                    <span>Rating: {{ fic.rating }}</span>
+                    <span>Capítulos: {{ fic.capitulos }}</span>
+                </p>
+                <p class="handwritten-text">{{ fic.sinopsis }}</p>
+                <div class="card-tags">
+                    {% assign tags = fic.tags | split: ", " %}
+                    {% for tag in tags %}<span>{{ tag }}</span>{% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

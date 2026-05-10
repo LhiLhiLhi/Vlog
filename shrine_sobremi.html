@@ -1,0 +1,49 @@
+---
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>♡ Sobre Mí | ANALHI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="shrine.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Inter:wght@400;600;800&family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="index.html" class="back-btn">← volver al inicio</a>
+
+    <div class="shrine-container">
+        <h1 class="shrine-title">♡ Sobre Mí ♡</h1>
+        <p class="shrine-subtitle handwritten-text">un alma vieja en un mundo moderno</p>
+
+        <div class="about-section">
+            <div class="about-card">
+                <h2>🧠 Datos Rápidos</h2>
+                <ul class="handwritten-text">
+                    <li><strong>Nombre:</strong> {{ site.data.profile.nombre }}</li>
+                    <li><strong>Estudios:</strong> {{ site.data.profile.estudios }}</li>
+                    <li><strong>Mood:</strong> {{ site.data.profile.mood }}</li>
+                    <li><strong>Status:</strong> {{ site.data.profile.status }}</li>
+                </ul>
+            </div>
+
+            <div class="about-card">
+                <h2>💭 Mi Cerebro</h2>
+                <p class="handwritten-text">{{ site.data.profile.bio }}</p>
+            </div>
+
+            <div class="about-card">
+                <h2>✨ Fun Facts</h2>
+                <ul class="handwritten-text">
+                    {% for fact in site.data.profile.fun_facts %}
+                    <li>{{ fact }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

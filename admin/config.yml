@@ -1,0 +1,105 @@
+backend:
+  name: github
+  repo: LhiLhiLhi/Vlog
+  branch: main
+
+media_folder: "assets"
+public_folder: "/assets"
+
+collections:
+  - name: "diario"
+    label: "📓 Entradas del Diario"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Título", name: "title", widget: "string"}
+      - {label: "Fecha", name: "date", widget: "datetime"}
+      - {label: "Cuerpo del Texto", name: "body", widget: "text"}
+
+  - name: "paginas"
+    label: "📄 Páginas y Secciones"
+    files:
+      - name: "perfil"
+        label: "👤 Perfil / Sobre Mí"
+        file: "_data/profile.yml"
+        fields:
+          - {label: "Nombre", name: "nombre", widget: "string", default: "Analhi"}
+          - {label: "Estudios", name: "estudios", widget: "string", default: "Psicología"}
+          - {label: "Mood", name: "mood", widget: "string", default: "warm & cozy"}
+          - {label: "Status", name: "status", widget: "string", default: "vibing to 80s alt rock"}
+          - {label: "Bio", name: "bio", widget: "text", default: "Me fascina la cultura general..."}
+          - label: "Fun Facts"
+            name: "fun_facts"
+            widget: "list"
+            field: {label: "Fact", name: "fact", widget: "string"}
+
+      - name: "marquee"
+        label: "📢 Texto del Marquee"
+        file: "_data/marquee.yml"
+        fields:
+          - {label: "Texto del Marquee", name: "texto", widget: "string"}
+
+      - name: "playlist"
+        label: "🎵 Playlist del Reproductor"
+        file: "_data/playlist.yml"
+        fields:
+          - label: "Canciones"
+            name: "canciones"
+            widget: "list"
+            fields:
+              - {label: "Título", name: "title", widget: "string"}
+              - {label: "Artista", name: "artist", widget: "string"}
+              - {label: "Archivo de Música", name: "url", widget: "file", media_folder: "/assets/music", public_folder: "/assets/music"}
+
+      - name: "musica"
+        label: "♫ Página de Música"
+        file: "_data/musica.yml"
+        fields:
+          - label: "Artistas / Bandas"
+            name: "artistas"
+            widget: "list"
+            fields:
+              - {label: "Nombre", name: "nombre", widget: "string"}
+              - {label: "Descripción", name: "descripcion", widget: "text"}
+              - {label: "Tags (separados por coma)", name: "tags", widget: "string"}
+
+      - name: "obsesiones"
+        label: "★ Página de Obsesiones"
+        file: "_data/obsesiones.yml"
+        fields:
+          - label: "Obsesiones"
+            name: "items"
+            widget: "list"
+            fields:
+              - {label: "Nombre", name: "nombre", widget: "string"}
+              - {label: "Descripción", name: "descripcion", widget: "text"}
+              - {label: "Tags (separados por coma)", name: "tags", widget: "string"}
+
+      - name: "outfits"
+        label: "✂ Página de Outfits"
+        file: "_data/outfits.yml"
+        fields:
+          - label: "Estilos"
+            name: "estilos"
+            widget: "list"
+            fields:
+              - {label: "Nombre", name: "nombre", widget: "string"}
+              - {label: "Descripción", name: "descripcion", widget: "text"}
+              - {label: "Tags (separados por coma)", name: "tags", widget: "string"}
+
+      - name: "fics"
+        label: "✎ Página de Fics"
+        file: "_data/fics.yml"
+        fields:
+          - label: "Fanfics"
+            name: "fics"
+            widget: "list"
+            fields:
+              - {label: "Título", name: "titulo", widget: "string"}
+              - {label: "Fandom", name: "fandom", widget: "string"}
+              - {label: "Rating", name: "rating", widget: "select", options: ["General", "Teen", "Mature"]}
+              - {label: "Capítulos", name: "capitulos", widget: "string", default: "?/?"}
+              - {label: "Sinopsis", name: "sinopsis", widget: "text"}
+              - {label: "Tags (separados por coma)", name: "tags", widget: "string"}
+              - {label: "Estado", name: "estado", widget: "select", options: ["EN PROGRESO", "COMPLETADO", "IDEA"]}

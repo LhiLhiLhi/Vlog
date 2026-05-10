@@ -1,0 +1,13 @@
+artistas:
+  - nombre: "The Smiths"
+    descripcion: "\"To die by your side is such a heavenly way to die.\" La melancolía del rock alternativo de los 80s no tiene comparación. Morrissey entiende algo que nadie más puede expresar."
+    tags: "80s, Alt Rock, Indie"
+  - nombre: "Queen"
+    descripcion: "Freddie Mercury es inigualable. Puedo escuchar \"Somebody to Love\" en repeat para siempre. Cada canción es una obra maestra de otro nivel."
+    tags: "Classic Rock, Pop, Legends"
+  - nombre: "Hamilton OST"
+    descripcion: "\"History has its eyes on you.\" El musical que cambió todo. Lin-Manuel Miranda es un genio y cada canción cuenta una historia que te atrapa."
+    tags: "Musical, Hip-Hop, Broadway"
+  - nombre: "80s & 90s Vibes"
+    descripcion: "Pop punk, new wave, synth-pop... toda la energía de esas décadas me llena el alma. Ojalá hubiera nacido en esa época."
+    tags: "Pop Punk, New Wave, Synth"

@@ -1,0 +1,10 @@
+canciones:
+  - title: "There Is a Light That Never Goes Out"
+    artist: "The Smiths"
+    url: "/assets/music/smiths.mp3"
+  - title: "Somebody To Love"
+    artist: "Queen"
+    url: "/assets/music/queen.mp3"
+  - title: "My Shot"
+    artist: "Hamilton OST"
+    url: "/assets/music/hamilton.mp3"
