@@ -1,0 +1,6 @@
+title: ANALHI | SCRAPBOOK
+baseurl: "/Vlog" # Asegúrate de que este sea el nombre exacto de tu repositorio en GitHub
+url: "https://LhiLhiLhi.github.io"
+markdown: kramdown
+theme: minima # O el que prefieras, pero minima es estándar
+exclude: [node_modules, vendor]
